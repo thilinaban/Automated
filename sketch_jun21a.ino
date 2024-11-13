@@ -11,11 +11,11 @@
 #include <NTPClient.h>
 #include <WiFiUdp.h>
 
-const char* ssid = "DESKTOP-31N24P4 8540";
-const char* password = "thilina123";
+const char* ssid = "wifi ssid";
+const char* password = "password";
 
-#define BOTtoken "7096100609:AAHGvi1IEM5gvorFzJ3j2UNHqkXvinKd8c4"
-#define CHAT_ID "-4259684685"
+#define BOTtoken "bot id"
+#define CHAT_ID "chat id"
 
 #ifdef ESP8266
 X509List cert(TELEGRAM_CERTIFICATE_ROOT);
@@ -250,7 +250,7 @@ void checkDailyRestart() {
   int hours = timeClient.getHours();
   int minutes = timeClient.getMinutes();
 
-  // Check if it's 8:00 AM and it's a new day (only check once per day)- Tada... its a new day
+  // Check if it's 8:00 AM and it's a new day (only check once per day)- 
   if (hours == 00 && minutes == 0 && 
       !(EEPROM.read(LAST_RESTART_HOUR_ADDRESS) == 00 && EEPROM.read(LAST_RESTART_MINUTE_ADDRESS) == 0)) {
     EEPROM.write(STATUS_AFTER_RESTART_FLAG_ADDRESS, 1);
